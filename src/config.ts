@@ -5,7 +5,7 @@ export class Config {
     public static readonly delayBetweenGweiCheck: IDelayRange = { min: 0.3, max: 1 }; // задержка перед получением нового гвея (в минутах)
     public static readonly maxBridgeL1Gwei = 15; // до какого гвея будет использоваться бридж
     public static readonly ethereumRpc: string = 'https://rpc.ankr.com/eth'; // rpc для Ethereum chain, если нет необходимости то оставить ''
-    public static readonly gnosisRpc: string = 'https://rpc.ankr.com/gnosis'; // rpc для Ethereum chain, если нет необходимости то оставить ''
+    public static readonly gnosisRpc: string = 'https://rpc.ankr.com/gnosis'; // rpc для Gnosis chain, если нет необходимости то оставить ''
 }
 
 export class TelepathyConfig {
