@@ -9,7 +9,7 @@ export async function checkGwei() {
 
     const client = createPublicClient({
         chain: mainnet,
-        transport: Config.rpc == '' ? http() : http(Config.rpc),
+        transport: Config.ethereumRpc == '' ? http() : http(Config.ethereumRpc),
     });
 
     let gwei = await client.getGasPrice();

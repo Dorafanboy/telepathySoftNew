@@ -5,7 +5,7 @@ import { printError, printInfo, printSuccess } from './data/logger/logPrinter';
 import * as readline from 'readline';
 import { delay } from './data/helpers/delayer';
 import { IFunction } from './data/utils/interfaces';
-import { sendMail } from './core/telepathy/telepathy';
+import { sendMailEthereum, sendMailGnosis } from './core/telepathy/telepathy';
 
 let account;
 
@@ -14,7 +14,8 @@ const privateKeysFilePath = 'private_keys.txt';
 const privateKeysPath = fs.createReadStream(privateKeysFilePath);
 
 const functions: { [key: string]: IFunction } = {
-    bridge: { func: sendMail, isUse: TelepathyConfig.isUse },
+    sendMailEthereum: { func: sendMailEthereum, isUse: TelepathyConfig.isUseEthereumChain },
+    sendMailGnosis: { func: sendMailGnosis, isUse: TelepathyConfig.isUseGnosisChain },
 };
 
 const filteredFunctions = Object.keys(functions)

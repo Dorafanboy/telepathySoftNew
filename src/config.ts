@@ -4,11 +4,13 @@ export class Config {
     public static readonly delayBetweenAccounts: IDelayRange = { min: 15, max: 25 }; // задержка между аккаунтами (в минутах)
     public static readonly delayBetweenGweiCheck: IDelayRange = { min: 0.3, max: 1 }; // задержка перед получением нового гвея (в минутах)
     public static readonly maxBridgeL1Gwei = 15; // до какого гвея будет использоваться бридж
-    public static readonly rpc: string = 'https://rpc.ankr.com/eth'; // rpc, если нет необходимости то оставить ''
+    public static readonly ethereumRpc: string = 'https://rpc.ankr.com/eth'; // rpc для Ethereum chain, если нет необходимости то оставить ''
+    public static readonly gnosisRpc: string = 'https://rpc.ankr.com/gnosis'; // rpc для Ethereum chain, если нет необходимости то оставить ''
 }
 
 export class TelepathyConfig {
-    public static readonly isUse: boolean = true; // использовать ли telepathy
+    public static readonly isUseEthereumChain: boolean = false; // использовать ли ethereum сеть
+    public static readonly isUseGnosisChain: boolean = true; // использовать ли gnosis сеть
     public static readonly chainDstData: IChainData[] = [
         {
             chainId: 42161,
